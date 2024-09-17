@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+#editorOutputContainer {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+#codeEditorContainer {
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    position: relative;
+}
+
+.CodeMirror {
+    height: 100%;
+}
+.CodeMirror-lines {
+    font-size: 16px; /* Ensure the font size applies to the lines */
+}
+
+#output {
+    width: 40%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    height: 100%;
+    white-space: pre-wrap;
+    border-left: 2px solid #333;
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+
+}
+
+#runButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#runButton:hover {
+    background-color: #0056b3;
+}
+
+#sidebarContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebarToggle {
+    position: absolute;
+    top: 0.3rem;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    transition: left 0.3s ease;
+}
+
+#sidebarToggle:hover {
+    background-color: #0056b3;
+}
+
+#syntaxSidebar {
+    width: 450px;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #ccc;
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+#syntaxSidebar.collapsed {
+    transform: translateX(100%);
+}
+
+#sidebarToggle.collapsed {
+    left: 24rem;
+}

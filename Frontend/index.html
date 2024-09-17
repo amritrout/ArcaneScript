@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcaneScript Online Interpreter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>ArcaneScript</h1>
+<div id="editorOutputContainer">
+  <div id="codeEditorContainer">
+    <textarea id="codeEditor"></textarea>
+  </div>
+  <div id="output">Output will appear here...</div>
+</div>
+
+<button id="runButton">Run</button>
+
+<div id="sidebarContainer">
+  <button id="sidebarToggle">☰</button>
+  <div id="syntaxSidebar">
+    <h2>ArcaneScript Syntax</h2>
+    <p><strong>Print:</strong> `print value;`</p>
+    <p><strong>Println:</strong> `println value;`</p>
+    <p><strong>Assignment:</strong> `variable = value;`</p>
+    <p><strong>Array Initialization:</strong></p>
+    <p><strong>array</strong> name[size] = {value1, value2, ...};</p>
+    <p><strong>array</strong> name[size];</p>
+    <p><strong>array</strong> name[] = {value1, value2, ...};</p>
+    <p><strong>For Loop:</strong></p>
+    <p>Syntax: `for (initialization condition increment) { statements }`</p>
+    <p>Example: `for (i = 0; i < 10; i = i + 1;) { print i; }`</p>
+    <p><strong>While Loop:</strong> `while (condition) { statements }`</p>
+    <p><strong>If Statement:</strong></p>
+    <p>`if (condition) { statements }`</p>
+    <p>`if (condition) { statements } else { statements }`</p>
+    <p><strong>Method Declaration:</strong> `invoke methodName(parameters) { statements }`</p>
+    <p><strong>Log:</strong> `log value;` (similar to `return`)</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/clike/clike.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
