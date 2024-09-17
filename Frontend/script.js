@@ -28,7 +28,7 @@ document.getElementById('runButton').addEventListener('click', async function() 
     formData.append('postData', blob, 'code.txt');
 
     try {
-        const response = await fetch('https://arcaneserver.online/', {
+        const response = await fetch('http://localhost:8443/', {
             method: 'POST',
             body: formData
         });
