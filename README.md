@@ -8,7 +8,7 @@ ArcaneScript is a custom programming language developed to explore language desi
 - **Online Interpreter**: A web-based interface that allows users to write and execute ArcaneScript code.
 - **Code Editor**: Integrated with CodeMirror for a rich editing experience with syntax highlighting.
 - **AWS Hosting**: The live version of ArcaneHttpServer is deployed on Amazon AWS.
-- **Netlify Hosting**: The frontend is hosted on Netlify for fast and reliable access.
+- **Netlify Hosting**: The live version of frontend is hosted on Netlify.
 
 ## Language Features
 
