@@ -1,6 +1,6 @@
 # ArcaneScript
 
-ArcaneScript is a custom programming language developed to explore language design and interpretation. This project includes the development of both the ArcaneScript language and its online interpreter. The grammar was written using GOLD Parser and the interpreter in Java, enabling users to write, test, and execute ArcaneScript code.
+ArcaneScript is a custom programming language developed to explore language design and interpretation. This project includes the development of both the ArcaneScript language and its online Code Runner. The grammar was written using GOLD Parser and the interpreter in Java, enabling users to write, test, and execute ArcaneScript code.
 
 ## Features
 
