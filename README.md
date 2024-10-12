@@ -100,7 +100,6 @@ To run the project locally:
 You can access the live version of ArcaneScript without any local setup:
 
 - Frontend: [https://arcanescript.netlify.app/](https://arcanescript.netlify.app/)
-- Backend: [https://arcaneserver.online](https://arcaneserver.online)
 
 Use the Netlify-hosted frontend to write and run ArcaneScript code, which will be processed by the AWS-hosted backend.
 
