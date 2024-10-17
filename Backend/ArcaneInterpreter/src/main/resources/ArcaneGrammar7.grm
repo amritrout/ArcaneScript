@@ -49,7 +49,7 @@ Comment Line  = '//'
               | println <Expression> <Expression> ';'
               | println <Expression> input Identifier ';'
               | Identifier '=' <Operator> ';'
-              | Identifier '=' Identifier '['NumberLiteral']' ';'
+              | Identifier '=' Identifier '[' <Expression> ']' ';'
               | Identifier '['NumberLiteral']' '=' <Expression> ';'
               | for '(' <Statement> <Expression> ';' <Statement> ')' start <Statements> end
               | while '(' <Expression> ')' start <Statements> end
@@ -60,6 +60,7 @@ Comment Line  = '//'
               | array Identifier '[' NumberLiteral ']' '=' start <ArgumentList> end ';'
               | array Identifier '[' ']' '=' start <ArgumentList> end ';'
               | array Identifier '[' NumberLiteral ']' ';'       
+              
 
 <OptionalParamList> ::= <ParamList>
                       |
@@ -94,7 +95,7 @@ Comment Line  = '//'
          | Identifier '(' <OptionalArgumentList> ')'
          | '(' <Expression> ')'
          | NumberLiteral
-         | Identifier '['NumberLiteral']'
+         | Identifier '[' <Expression> ']'
 
 <OptionalArgumentList> ::= <ArgumentList>
                 |
