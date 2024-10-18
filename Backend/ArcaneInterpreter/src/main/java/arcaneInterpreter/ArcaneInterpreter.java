@@ -1,8 +1,10 @@
 package arcaneInterpreter;
 
 import com.creativewidgetworks.goldparser.engine.ParserException;
+import com.creativewidgetworks.goldparser.engine.Reduction;
 import com.creativewidgetworks.goldparser.parser.GOLDParser;
 import com.creativewidgetworks.goldparser.util.FormatHelper;
+import arcaneInterpreter.Rules.FunctionInvocation;
 
 import java.io.*;
 
@@ -20,22 +22,27 @@ public class ArcaneInterpreter {
         try (InputStream grammarStream = getClass().getResourceAsStream("/ArcaneGrammar7.egt")) {
             GOLDParser parser = new GOLDParser(
                     grammarStream,
-                    "arcaneInterpreter",  // rule handler package
-                    true);  // trim reductions
-
+                    "arcaneInterpreter.Rules",
+                    true);
+    
             parser.setGenerateTree(wantTree);
-
+    
             boolean parsedWithoutError = parser.parseSourceStatements(sourceCode);
             String tree = parser.getParseTree();
-
+    
             if (parsedWithoutError) {
-                parser.getCurrentReduction().execute();
+                Reduction reduction = parser.getCurrentReduction();
+                if (reduction instanceof FunctionInvocation) {
+                    ((FunctionInvocation) reduction).getValue();
+                } else {
+                    reduction.execute();
+                }
             } else {
                 System.out.println(parser.getErrorMessage());
             }
-
-            return tree;
-
+                
+                        return tree;
+    
         } catch (ParserException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();

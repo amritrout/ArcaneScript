@@ -33,12 +33,12 @@ public class Statements extends Reduction {
     @Override
     public void execute() throws ParserException {
         if (statement1 != null) {
-            statement1.execute();
+            if (statement1 instanceof FunctionInvocation) {
+                ((FunctionInvocation) statement1).getValue(); 
+            } else {
+                statement1.execute();
+            }
             setValue(statement1.getValue());
-        }
-        if (statement2 != null) {
-            statement2.execute();
-            setValue(statement2.getValue());
         }
     }
 }

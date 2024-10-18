@@ -60,6 +60,7 @@ Comment Line  = '//'
               | array Identifier '[' NumberLiteral ']' '=' start <ArgumentList> end ';'
               | array Identifier '[' ']' '=' start <ArgumentList> end ';'
               | array Identifier '[' NumberLiteral ']' ';'       
+              | Identifier '(' <OptionalArgumentList> ')' ';'
               
 
 <OptionalParamList> ::= <ParamList>
