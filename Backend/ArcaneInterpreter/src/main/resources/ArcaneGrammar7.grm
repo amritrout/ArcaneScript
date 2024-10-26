@@ -55,6 +55,8 @@ Comment Line  = '//'
               | while '(' <Expression> ')' start <Statements> end
               | if '(' <Expression> ')' start <Statements> end
               | if '(' <Expression> ')' start <Statements> end else start <Statements> end
+              | if '(' <Expression> ')' start <Statements> end else if '(' <Expression> ')' start <Statements> end
+              | if '(' <Expression> ')' start <Statements> end else if '(' <Expression> ')' start <Statements> end else start <Statements> end
               | invoke Identifier '(' <OptionalParamList> ')' start <Statements> end
               | log <Expression> ';'
               | array Identifier '[' NumberLiteral ']' '=' start <ArgumentList> end ';'
